@@ -1,6 +1,7 @@
 package main.java.ui;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -14,6 +15,8 @@ public class QuickHitFrame extends JFrame {
      */
     public QuickHitFrame() {
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+        ImageIcon icon = new ImageIcon("src/main/resources/TidusLaugh.png");
+        this.setIconImage(icon.getImage());
         initUnits();
         initChainPanel();
         initMacroPanel();
@@ -23,6 +26,7 @@ public class QuickHitFrame extends JFrame {
         this.setTitle("QuickHit");
         this.pack();
         this.setVisible(true);
+        new NewSkillDialog(1, 1);
     }
 
     /**

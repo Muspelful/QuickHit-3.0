@@ -3,6 +3,7 @@ package main.java.ui;
 import java.awt.Component;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -33,6 +34,8 @@ public abstract class SkillDialog extends JDialog {
      */
     private void init() {
         this.setTitle("Custom skill");
+        ImageIcon icon = new ImageIcon("src/main/resources/TidusLaugh.png");
+        this.setIconImage(icon.getImage());
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBorder(new EmptyBorder(5, 5, 5, 5));
