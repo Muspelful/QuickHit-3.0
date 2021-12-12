@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 
 public class SavedSkillManager {
     private static String savePath;
-    static List<Skill> savedSkills;
+    static List<SavedSkill> savedSkills;
     
     public SavedSkillManager() {
         setPath();
@@ -40,16 +40,20 @@ public class SavedSkillManager {
      * @param path The path to the file
      */
     private static void loadSkills(String path) {
-        savedSkills = new ArrayList<Skill>();
+        savedSkills = new ArrayList<SavedSkill>();
         try {
             Scanner s = new Scanner(new File(path), "utf-8");
             Gson gson = new Gson();
             while(s.hasNextLine()) {
-                savedSkills.add(gson.fromJson(s.nextLine(), Skill.class));
+                savedSkills.add(gson.fromJson(s.nextLine(), SavedSkill.class));
             }
             s.close();
         } catch (FileNotFoundException e) {
             System.out.println("skills.json not found");
         }
+    }
+    
+    class SavedSkill {
+        
     }
 }

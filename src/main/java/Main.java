@@ -1,6 +1,5 @@
 package main.java;
 
-import main.java.ui.NewSkillDialog;
 import main.java.ui.QuickHitFrame;
 
 public class Main {

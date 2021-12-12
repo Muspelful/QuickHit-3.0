@@ -1,9 +1,9 @@
 package main.java;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Chain {
-    ArrayList<ChainHit> hits;
+    List<Unit> units;
     
     Chain() {
         
