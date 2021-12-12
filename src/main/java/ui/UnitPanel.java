@@ -11,7 +11,7 @@ public class UnitPanel extends JPanel {
      * Creates a unit in the specified slot.
      * @param slot The slot to place the unit.
      */
-    public UnitPanel(int slot) {
-        unit = new Unit(slot);
+    public UnitPanel(Unit u) {
+        unit = u;
     }
 }

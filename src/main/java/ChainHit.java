@@ -29,21 +29,21 @@ public class ChainHit implements Comparable<ChainHit> {
     }
 
     /**
-     * @return the castSlot
+     * @return The slot of the casting unit
      */
     public int getUnitSlot() {
         return unitSlot;
     }
 
     /**
-     * @return the frame
+     * @return The frame of the hit
      */
     public int getFrame() {
         return frame;
     }
 
     /**
-     * @return the tag
+     * @return Whether this hit is from a tag skill
      */
     public boolean isTag() {
         return tag;

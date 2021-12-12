@@ -12,7 +12,7 @@ package main.java;
  * 3. Add a new case to the switch statement in itemStateChanged in Skill.java with the family name as the case, and make it so that said case sets the frames and the cast time to the appropriate constants.
  */
 public class Constants {
-    public enum Family { AMoE, AR, BS, CWA, DR, Fld, PB, SR }; 
+    public enum Family { AMoE, AR, BS, CWA, DR, Fld, PB, SR, Tag, Tnd }; 
     public static final int MAX_CAST_COUNT = 5;
     public static final int MAX_NUMBER_OF_UNITS = 6;
     public static final String[] CHAIN_FAMILY_NAMES = {"None", "Copy previous skill", "Custom skill", "Absolute Mirror of Equity", "Absolute Zero", "Aureole Ray", "Bolting Strike", "Chaos Wave", "Chaos Wave Awakened", "Disorder",
@@ -35,14 +35,17 @@ public class Constants {
     public static final Integer[] PB_FRAMES = {30, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6};
     public static final Integer[] SR_FRAMES = {110, 10, 10, 10, 10, 10, 10, 10, 10, 10};
     public static final Integer[] TAG_FRAMES = {12, 9, 9, 9, 9, 9, 9};
+    public static final Integer[] TORNADO_FRAMES = {80, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12};
     public static final int AR_CAST = 39;
     public static final int AT_CAST = 39;
     public static final int BS_CAST = 39;
     public static final int CWA_CAST = 39;
+    public static final int DR_CAST = 39;
     public static final int FLD_CAST = 39;
     public static final int PB_CAST = 39;
     public static final int SR_CAST = 39;
     public static final int TAG_CAST = 39;
+    public static final int TORNADO_CAST = 39;
     public static final int FIRST_CAST_OFFSET = 13;
     public static final int SUBSEQUENT_CAST_OFFSET = 14;
     public static final int DEFAULT_DELAY = 40;
