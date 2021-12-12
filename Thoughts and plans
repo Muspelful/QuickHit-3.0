@@ -1,12 +1,7 @@
 Todo:
 
-Unit will need some rewrites to allow the replacement of the "middle" skills.
 Implement "removeSkill(int slot)" in unit, which trims off that slot and all subsequent casts.
-Implement a skill factory of some sort for families.
-Figure out how Chain is going to talk to Unit.
 
 Ideas/thoughts:
-
-Use a factory for skills?
 
 Set combo boxes to "None" and disable them if the previous box is none.
