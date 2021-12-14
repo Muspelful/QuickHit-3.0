@@ -1,7 +1,8 @@
 Todo:
 
-Implement "removeSkill(int slot)" in unit, which trims off that slot and all subsequent casts.
+Implement MacroMaker and SavedSkillManager.
 
 Ideas/thoughts:
 
 Set combo boxes to "None" and disable them if the previous box is none.
+Add some kind of "multiplicity" variable to ChainHit and use it for simultaneous non-tag unit hits.

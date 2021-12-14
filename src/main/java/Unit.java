@@ -75,49 +75,70 @@ public class Unit {
         switch(family) {
             case AMoE:
                 hits = Arrays.asList(Constants.AT_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.AT_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case AR:
                 hits = Arrays.asList(Constants.AR_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.AR_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case BS:
                 hits = Arrays.asList(Constants.BS_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.BS_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case CWA:
                 hits = Arrays.asList(Constants.CWA_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.CWA_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case DR:
                 hits = Arrays.asList(Constants.DR_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DR_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case Fld:
                 hits = Arrays.asList(Constants.FLD_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.FLD_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case PB:
                 hits = Arrays.asList(Constants.PB_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.PB_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case SR:
                 hits = Arrays.asList(Constants.SR_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.SR_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
             case Tag:
                 hits = Arrays.asList(Constants.TAG_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.TAG_CAST, castSlot, true));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, true));
                 break;
             case Tnd:
                 hits = Arrays.asList(Constants.TORNADO_FRAMES);
-                skills.add(castSlot, new Skill(hits, offset, 0, Constants.TORNADO_CAST, castSlot, false));
+                skills.add(castSlot, new Skill(hits, offset, 0, Constants.DEFAULT_CAST, castSlot, false));
                 break;
         }
     }
 
+    /**
+     * Adds a custom skill with the specified properties.
+     * @param hits The hit frames
+     * @param offset The offset
+     * @param cgDelay The cgDelay
+     * @param castDelay The castDelay
+     * @param tag Whether it's a tag skill
+     * @param castSlot The skill slot it fits into
+     */
     public void addSkill(List<Integer> hits, int offset, int cgDelay, int castDelay, boolean tag, int castSlot) {
         skills.add(new Skill(hits, offset, cgDelay, castDelay, castSlot, tag));
+    }
+    
+    /**
+     * Removes the skill in the specified cast slot.
+     * If it's not the last slot, also removes all subsequent casts.
+     * @param castSlot The slot to remove
+     */
+    public void removeSkill(int castSlot) {
+        if(castSlot >= skills.size()) {
+            return;
+        }
+        skills = skills.subList(0, castSlot);
     }
 
     class Skill {
@@ -135,8 +156,8 @@ public class Unit {
          * @param offset The offset
          * @param cgDelay The cg delay
          * @param castDelay The post cast delay
-         * @param castSlot The 
-         * @param tag
+         * @param castSlot The cast slot
+         * @param tag Whether it's a tag skill
          */
         public Skill(List<Integer> hits, int offset, int cgDelay,
                 int castDelay, int castSlot, boolean tag) {

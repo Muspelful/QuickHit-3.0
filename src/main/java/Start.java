@@ -2,7 +2,7 @@ package main.java;
 
 import main.java.ui.QuickHitFrame;
 
-public class Main {
+public class Start {
 
     /**
      * Launches the program.

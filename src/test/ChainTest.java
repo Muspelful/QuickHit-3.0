@@ -3,7 +3,6 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -118,5 +117,46 @@ public class ChainTest {
         List<ChainHit> hits = c.getHits(unitList);
         
         assertTrue(hits.get(1).breaksChain());
+    }
+    
+    /**
+     * Tests removing the only skill.
+     */
+    @Test
+    public void removeOnlySkill() {
+        Unit u = new Unit(0);
+        u.addSkill(Constants.Family.Tag, 0);
+        assertEquals(7, u.getHits().size());
+        u.removeSkill(0);
+        assertEquals(0, u.getHits().size());
+    }
+    
+    /**
+     * Tests removing the last skill when the unit has more than one.
+     */
+    @Test
+    public void removeLastSkill() {
+        Unit u = new Unit(0);
+        u.addSkill(Constants.Family.Tag, 0);
+        u.addSkill(Constants.Family.Tag, 1);
+        assertEquals(14, u.getHits().size());
+        u.removeSkill(1);
+        assertEquals(7, u.getHits().size());
+    }
+    
+    /**
+     * Tests removing a "middle" skill.
+     */
+    @Test
+    public void removeMiddleSkill() {
+        Unit u = new Unit(0);
+        u.addSkill(Constants.Family.Tag, 0);
+        u.addSkill(Constants.Family.Tag, 1);
+        u.addSkill(Constants.Family.Tag, 2);
+        u.addSkill(Constants.Family.Tag, 3);
+        u.addSkill(Constants.Family.Tag, 4);
+        assertEquals(35, u.getHits().size());
+        u.removeSkill(2);
+        assertEquals(14, u.getHits().size());
     }
 }

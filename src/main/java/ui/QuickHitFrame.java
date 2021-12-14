@@ -1,5 +1,6 @@
 package main.java.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -30,7 +31,6 @@ public class QuickHitFrame extends JFrame {
         this.setTitle("QuickHit");
         this.pack();
         this.setVisible(true);
-        new NewSkillDialog(1, 1);
     }
 
     /**
@@ -39,6 +39,7 @@ public class QuickHitFrame extends JFrame {
     private void initUnits() {
         JPanel unitsPanel = new JPanel();
         this.add(unitsPanel);
+        units = new ArrayList<Unit>();
         for(int count = 0; count < Constants.MAX_NUMBER_OF_UNITS; count++) {
             units.add(new Unit(count));
             unitsPanel.add(new UnitPanel(units.get(count)));
@@ -50,7 +51,6 @@ public class QuickHitFrame extends JFrame {
      */
     private void initChainPanel() {
         // TODO Auto-generated method stub
-        
     }
     
     /**
@@ -58,6 +58,5 @@ public class QuickHitFrame extends JFrame {
      */
     private void initMacroPanel() {
         // TODO Auto-generated method stub
-        
     }
 }
